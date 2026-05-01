@@ -1,0 +1,25 @@
+# Node modules
+node_modules/
+
+# Playwright test results
+test-results/
+blob-report/
+playwright-report/
+
+# Build output
+dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code settings (по избор)
+.vscode/

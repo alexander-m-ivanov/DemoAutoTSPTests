@@ -1,0 +1,26 @@
+{
+  "name": "demoautotsptests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexander-m-ivanov/DemoAutoTSPTests.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/alexander-m-ivanov/DemoAutoTSPTests/issues"
+  },
+  "homepage": "https://github.com/alexander-m-ivanov/DemoAutoTSPTests#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.3.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1"
+  }
+}

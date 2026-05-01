@@ -1,0 +1,6 @@
+export const EXPECTED_DOMAINS = [
+    'qa-automation-tools.com',
+    'store.qa-automation-tools.com',
+    'parked-qa-automation-tools.com',
+    'site-tools-demo.net'
+];
