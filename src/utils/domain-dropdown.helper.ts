@@ -1,6 +1,8 @@
 import { expect } from '@playwright/test';
 import { DomainDropdown } from '../components/domain-dropdown.component';
 
+// NOTE: In a larger/enterprise project, this interface would be extracted
+// into a shared types or page-object contract file.
 interface HasDomainDropdown {
     domainDropdown: DomainDropdown;
 }
