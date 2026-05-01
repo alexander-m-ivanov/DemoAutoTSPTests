@@ -68,7 +68,7 @@ The project uses environment variables.
 Create a `.env` file in the root directory:
 
 ```bash
-BASE_URL=https://example.com
+BASE_URL=https://the-internet.herokuapp.com/
 ```
 
 Environment variables are loaded via the Playwright configuration and are accessible throughout the project.
