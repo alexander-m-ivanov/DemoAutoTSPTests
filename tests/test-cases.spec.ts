@@ -6,30 +6,36 @@ test.beforeEach(async ({ page }) => {
   await page.goto('');
 });
 
-test('TC#1 Add an email account', async ({ home, emailAccounts }) => {
-
-  const accountName = 'test_account';
-  const expectedEmailAddress = `${accountName}@${EXPECTED_DOMAINS[3]}`;
-
-  await home.navigation.goToEmailAccounts();
-  await verifyAndSelectDomain(emailAccounts, EXPECTED_DOMAINS);
-
-  await emailAccounts.enterAccountName(accountName);
-  await emailAccounts.clickGeneratePassword();
-  expect.soft(await emailAccounts.getPasswordInputValue()).toMatch(/.+/);
-
-  await emailAccounts.createSubmitButton.clickCreateButton();
-  await expect.soft(emailAccounts.getSuccessMessage()).toBeVisible();
-  expect.soft(await emailAccounts.getCreateEmailNotificationMessage()).toEqual(`Email account ${expectedEmailAddress} is created.`)
-  expect(await emailAccounts.doesTableContainsEmailAddress(expectedEmailAddress)).toBe(true);
+test('dummy test - open page and check URL', async ({ page }) => {
+  await expect(page).toHaveURL('');
 });
 
-test('TC#2 Add an empty email Forwarder', async ({ home, emailForwarders }) => {
+test.describe('Do not execute! Only for demonstartion of aplying architecture. Original site went down.', () => {
+  test('TC#1 Add an email account', async ({ home, emailAccounts }) => {
 
-  await home.navigation.goToEmailForwarders();
-  await verifyAndSelectDomain(emailForwarders, EXPECTED_DOMAINS);
+    const accountName = 'test_account';
+    const expectedEmailAddress = `${accountName}@${EXPECTED_DOMAINS[3]}`;
 
-  await emailForwarders.createSubmitButton.clickCreateButton();
-  await expect.soft(emailForwarders.getRequiredFieldValidation()).toBeVisible();
-  expect(await emailForwarders.getRequiredFieldValidationMessage()).toEqual('Required field.');
+    await home.navigation.goToEmailAccounts();
+    await verifyAndSelectDomain(emailAccounts, EXPECTED_DOMAINS);
+
+    await emailAccounts.enterAccountName(accountName);
+    await emailAccounts.clickGeneratePassword();
+    expect.soft(await emailAccounts.getPasswordInputValue()).toMatch(/.+/);
+
+    await emailAccounts.createSubmitButton.clickCreateButton();
+    await expect.soft(emailAccounts.getSuccessMessage()).toBeVisible();
+    expect.soft(await emailAccounts.getCreateEmailNotificationMessage()).toEqual(`Email account ${expectedEmailAddress} is created.`)
+    expect(await emailAccounts.doesTableContainsEmailAddress(expectedEmailAddress)).toBe(true);
+  });
+
+  test('TC#2 Add an empty email Forwarder', async ({ home, emailForwarders }) => {
+
+    await home.navigation.goToEmailForwarders();
+    await verifyAndSelectDomain(emailForwarders, EXPECTED_DOMAINS);
+
+    await emailForwarders.createSubmitButton.clickCreateButton();
+    await expect.soft(emailForwarders.getRequiredFieldValidation()).toBeVisible();
+    expect(await emailForwarders.getRequiredFieldValidationMessage()).toEqual('Required field.');
+  });
 });

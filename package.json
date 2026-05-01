@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test -g \"dummy test\"",
+    "test:headed": "playwright test --headed -g \"dummy test\"",
+    "test:debug": "playwright test --debug -g \"dummy test\"",
+    "report": "playwright show-report"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alexander-m-ivanov/DemoAutoTSPTests.git"
